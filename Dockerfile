@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-RUN apt update && apt upgrade -y && apt install -y cron && systemctl enable --now crond.service && rm -rf /var/lib/apt/lists/*
+RUN apt update && apt upgrade -y && apt install -y cron && rm -rf /var/lib/apt/lists/*
 
 RUN touch /var/log/test.log \
     && touch /etc/cron.d/test \

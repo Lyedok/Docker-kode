@@ -4,6 +4,7 @@ RUN apt update && apt upgrade -y && apt install -y cron && rm -rf /var/lib/apt/l
 
 RUN touch /var/log/test.log \
     && touch /etc/cron.d/test \
+    && chmod 0644 /etc/cron.d/test \
     && echo "*/1 * * * * echo '1' >> /var/log/test.log" >> /etc/cron.d/test
 
 CMD cron && tail -f /var/log/test.log
